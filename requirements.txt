@@ -1,0 +1,7 @@
+Django==2.2
+pytz==2018.9
+sqlparse==0.3.0
+djangorestframework
+django-heroku==0.3.1
+python-decouple
+coverage
