@@ -5,3 +5,4 @@ django-heroku==0.3.1
 python-decouple
 coverage
 psycopg2-binary
+gunicorn==19.8.1
