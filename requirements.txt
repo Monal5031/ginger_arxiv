@@ -4,3 +4,4 @@ sqlparse==0.3.0
 django-heroku==0.3.1
 python-decouple
 coverage
+psycopg2-binary
