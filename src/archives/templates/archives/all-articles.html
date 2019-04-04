@@ -1,0 +1,44 @@
+{% extends 'archives/base.html' %}
+{% load static %}
+{% block title %}
+    All Articles
+{% endblock %}
+
+{% block body %}
+    {% if articles_list %}
+        {% if articles_list.has_previous %}
+            <button type="button" class="btn btn-primary" style="margin-top: 0.5rem"><a style="color: white" href="?page={{ articles_list.previous_page_number }}&&num_items={{ num_items }}">Previous Page</a></button>
+        {% endif %}
+        {% if articles_list.has_next %}
+            <button type="button" class="btn btn-primary" style="margin-top: 0.5rem"><a style="color: white" href="?page={{ articles_list.next_page_number }}&&num_items={{ num_items }}">Next Page</a></button>
+        {% endif %}
+        <div class="card" style="margin-top: 1rem">
+        <h1 style="align-self: center; color: grey; margin-top: 1rem">Articles</h1>
+        <ul class="">
+            {% for article in articles_list %}
+                <div class="trigger_popup_fricc card" style="margin: 1rem 3rem 3rem 0;">
+                    <div class="card-header" style="font-size: x-large">{{ article.title }}</div>
+                    <div class="card-content" style="font-size: small; color: gray; margin: 1rem 0 0 3rem">Published: {{ article.published }}</div>
+                    <ul class="card-body" style="font-size: small; margin: 0 0 0 2rem;">
+                        {% for author in article.authors %}
+                            {{ author }} -
+                        {% endfor %}
+                    </ul>
+                    <div class="card-body">
+                        <p>{{ article.summary }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </ul>
+        </div>
+        {% if articles_list.has_previous %}
+            <button type="button" class="btn btn-primary" style="margin-top: 0.5rem"><a style="color: white" href="?page={{ articles_list.previous_page_number }}&&num_items={{ num_items }}">Previous Page</a></button>
+        {% endif %}
+        {% if articles_list.has_next %}
+            <button type="button" class="btn btn-primary" style="margin-top: 0.5rem"><a style="color: white" href="?page={{ articles_list.next_page_number }}&&num_items={{ num_items }}">Next Page</a></button>
+        {% endif %}
+    {% else %}
+        No Articles to display
+    {% endif %}
+{% endblock %}
+

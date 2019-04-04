@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>{% block title %}Ginger Archives{% endblock %}</title>
+    {% load staticfiles %}
 </head>
 <body>
-$END$
+
+    <div class="container">
+        {% block body %}
+            <div style="margin-top: 10%"><h3>This is the HomePage, head over -> <a href="{% url 'archives:all-articles' %}">here</a> to read all articles related to
+                psychiatry, therapy, data science or machine learning.</h3></div>
+        {% endblock %}
+    </div>
+
 </body>
 </html>
