@@ -21,7 +21,7 @@
                     <div class="card-content" style="font-size: small; color: gray; margin: 1rem 0 0 3rem">Published: {{ article.published }}</div>
                     <ul class="card-body" style="font-size: small; margin: 0 0 0 2rem;">
                         {% for author in article.authors %}
-                            {{ author }} -
+                            <a href="{% url 'archives:articles-by-author' %}?author_name={{ author }}">{{ author }}</a> -
                         {% endfor %}
                     </ul>
                     <div class="card-body">

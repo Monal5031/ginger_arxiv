@@ -1,0 +1,39 @@
+{% extends 'archives/base.html' %}
+{% load static %}
+{% block title %}
+    Articles by {{ author }}
+{% endblock %}
+
+{% block body %}
+    {% if articles_list %}
+        {% if articles_list.has_previous %}
+            <a style="color: white" href="?page={{ articles_list.previous_page_number }}&&num_items={{ num_items }}&&author_name={{ author }}"><button type="button" class="btn btn-primary" style="margin-top: 0.5rem">Previous Page</button></a>
+        {% endif %}
+        {% if articles_list.has_next %}
+            <a style="color: white" href="?page={{ articles_list.next_page_number }}&&num_items={{ num_items }}&&author_name={{ author }}"><button type="button" class="btn btn-primary" style="margin-top: 0.5rem">Next Page</button></a>
+        {% endif %}
+        <div class="card" style="margin-top: 1rem">
+        <h1 style="align-self: center; color: grey; margin-top: 1rem">Articles by {{ author }}</h1>
+        <ul class="">
+            {% for article in articles_list %}
+                <div class="trigger_popup_fricc card" style="margin: 1rem 3rem 3rem 0;">
+                    <div class="card-header" style="font-size: x-large">{{ article.title }}</div>
+                    <div class="card-content" style="font-size: small; color: gray; margin: 1rem 0 0 3rem">Published: {{ article.published }}</div>
+                    <div class="card-body">
+                        <p>{{ article.summary }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </ul>
+        </div>
+        {% if articles_list.has_previous %}
+            <a style="color: white" href="?page={{ articles_list.previous_page_number }}&&num_items={{ num_items }}&&authour_name={{ author }}"><button type="button" class="btn btn-primary" style="margin-top: 0.5rem">Previous Page</button></a>
+        {% endif %}
+        {% if articles_list.has_next %}
+            <a style="color: white" href="?page={{ articles_list.next_page_number }}&&num_items={{ num_items }}&&authour_name={{ author }}"><button type="button" class="btn btn-primary" style="margin-top: 0.5rem">Next Page</button></a>
+        {% endif %}
+    {% else %}
+        No Articles to display
+    {% endif %}
+{% endblock %}
+
