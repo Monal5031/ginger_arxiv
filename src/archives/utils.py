@@ -34,7 +34,8 @@ def fetch_articles_by_author(author_name, num_articles, start=0):
     for data in all_data:
         cleaned_data.append({
             'title': data['title'],
-            'published': data['published']
+            'published': data['published'],
+            'summary': data['summary']
         })
     return cleaned_data
 
