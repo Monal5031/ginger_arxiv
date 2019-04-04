@@ -6,3 +6,4 @@ python-decouple
 coverage
 psycopg2-binary
 gunicorn==19.8.1
+arxiv
