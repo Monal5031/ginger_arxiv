@@ -7,10 +7,10 @@
 {% block body %}
     {% if articles_list %}
         {% if articles_list.has_previous %}
-            <button type="button" class="btn btn-primary" style="margin-top: 0.5rem"><a style="color: white" href="?page={{ articles_list.previous_page_number }}&&num_items={{ num_items }}">Previous Page</a></button>
+            <a style="color: white" href="?page={{ articles_list.previous_page_number }}&&num_items={{ num_items }}"><button type="button" class="btn btn-primary" style="margin-top: 0.5rem">Previous Page</button></a>
         {% endif %}
         {% if articles_list.has_next %}
-            <button type="button" class="btn btn-primary" style="margin-top: 0.5rem"><a style="color: white" href="?page={{ articles_list.next_page_number }}&&num_items={{ num_items }}">Next Page</a></button>
+            <a style="color: white" href="?page={{ articles_list.next_page_number }}&&num_items={{ num_items }}"><button type="button" class="btn btn-primary" style="margin-top: 0.5rem">Next Page</button></a>
         {% endif %}
         <div class="card" style="margin-top: 1rem">
         <h1 style="align-self: center; color: grey; margin-top: 1rem">Articles</h1>
@@ -32,10 +32,10 @@
         </ul>
         </div>
         {% if articles_list.has_previous %}
-            <button type="button" class="btn btn-primary" style="margin-top: 0.5rem"><a style="color: white" href="?page={{ articles_list.previous_page_number }}&&num_items={{ num_items }}">Previous Page</a></button>
+            <a style="color: white" href="?page={{ articles_list.previous_page_number }}&&num_items={{ num_items }}"><button type="button" class="btn btn-primary" style="margin-top: 0.5rem">Previous Page</button></a>
         {% endif %}
         {% if articles_list.has_next %}
-            <button type="button" class="btn btn-primary" style="margin-top: 0.5rem"><a style="color: white" href="?page={{ articles_list.next_page_number }}&&num_items={{ num_items }}">Next Page</a></button>
+            <a style="color: white" href="?page={{ articles_list.next_page_number }}&&num_items={{ num_items }}"><button type="button" class="btn btn-primary" style="margin-top: 0.5rem">Next Page</button></a>
         {% endif %}
     {% else %}
         No Articles to display
